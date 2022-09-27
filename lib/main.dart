@@ -4,11 +4,15 @@ void main() {
   runApp(MyApp());
 }
 
-// MyApp class
 class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Text('Hello'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('My title'),
+        ),
+        body: const Text('This is my text'),
+      ),
     );
   }
 }
