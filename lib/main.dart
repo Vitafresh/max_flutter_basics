@@ -4,6 +4,7 @@ void main() {
   runApp(MyApp());
 }
 
+// MyApp class
 class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
