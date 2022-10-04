@@ -6,10 +6,15 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  void answerQuestion() {
+    print('Question answered!');
+  }
+
   Widget build(BuildContext context) {
     var questions = [
       'What\'s your favourite color?',
-      'What\'s your favourite animal?'
+      'What\'s your favourite animal?',
+      'What???',
     ];
     return MaterialApp(
       home: Scaffold(
@@ -18,18 +23,18 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: <Widget>[
-            Text('This is a text!'),
+            const Text('This is a text!'),
             LegacyRaisedButton(
-              child: Text('Answer 1'),
-              onPressed: null,
+              onPressed: answerQuestion,
+              child: const Text('Answer 1'),
             ),
             LegacyRaisedButton(
-              child: Text('Answer 2'),
-              onPressed: null,
+              onPressed: answerQuestion,
+              child: const Text('Answer 2'),
             ),
             LegacyRaisedButton(
-              child: Text('Answer 3'),
-              onPressed: null,
+              onPressed: answerQuestion,
+              child: const Text('Answer 3'),
             ),
           ],
         ),
