@@ -5,9 +5,25 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // implement createState
+    // throw UnimplementedError();
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
+  int questionIndex = 0;
+
   void answerQuestion() {
-    print('Question answered!');
+    // print('Question answered!');
+    setState(() {
+      questionIndex++;
+    });
+
+    print(questionIndex);
   }
 
   Widget build(BuildContext context) {
@@ -23,17 +39,19 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: <Widget>[
-            const Text('This is a text!'),
+            Text(questions.elementAt(questionIndex)),
             LegacyRaisedButton(
               onPressed: answerQuestion,
               child: const Text('Answer 1'),
             ),
             LegacyRaisedButton(
-              onPressed: answerQuestion,
+              onPressed: () => print('Question 2 answered!'),
               child: const Text('Answer 2'),
             ),
             LegacyRaisedButton(
-              onPressed: answerQuestion,
+              onPressed: () {
+                print('Question 3 answered!');
+              },
               child: const Text('Answer 3'),
             ),
           ],
