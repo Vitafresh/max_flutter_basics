@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:legacy_buttons/LegacyRaisedButton.dart';
+import 'question.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,20 +11,20 @@ class MyApp extends StatefulWidget {
   State<StatefulWidget> createState() {
     // implement createState
     // throw UnimplementedError();
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp> {
-  int questionIndex = 0;
+class _MyAppState extends State<MyApp> {
+  int _questionIndex = 0;
 
-  void answerQuestion() {
+  void _answerQuestion() {
     // print('Question answered!');
     setState(() {
-      questionIndex++;
+      _questionIndex++;
     });
 
-    print(questionIndex);
+    print(_questionIndex);
   }
 
   Widget build(BuildContext context) {
@@ -39,20 +40,20 @@ class MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            Text(questions.elementAt(questionIndex)),
+            Text(questions.elementAt(_questionIndex)),
             LegacyRaisedButton(
-              onPressed: answerQuestion,
-              child: const Text('Answer 1'),
+              onPressed: _answerQuestion,
+              child: Question('Answer 1'),
             ),
             LegacyRaisedButton(
               onPressed: () => print('Question 2 answered!'),
-              child: const Text('Answer 2'),
+              child: Question('Answer 2'),
             ),
             LegacyRaisedButton(
               onPressed: () {
                 print('Question 3 answered!');
               },
-              child: const Text('Answer 3'),
+              child: Question('Answer 3'),
             ),
           ],
         ),
