@@ -40,20 +40,20 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            Text(questions.elementAt(_questionIndex)),
+            Question(questions.elementAt(_questionIndex)),
             LegacyRaisedButton(
               onPressed: _answerQuestion,
-              child: Question('Answer 1'),
+              child: Text('Answer 1'),
             ),
             LegacyRaisedButton(
               onPressed: () => print('Question 2 answered!'),
-              child: Question('Answer 2'),
+              child: Text('Answer 2'),
             ),
             LegacyRaisedButton(
               onPressed: () {
                 print('Question 3 answered!');
               },
-              child: Question('Answer 3'),
+              child: Text('Answer 3'),
             ),
           ],
         ),
