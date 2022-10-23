@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:legacy_buttons/LegacyRaisedButton.dart';
 import 'question.dart';
+import 'answer.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,20 +42,9 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: <Widget>[
             Question(questions.elementAt(_questionIndex)),
-            LegacyRaisedButton(
-              onPressed: _answerQuestion,
-              child: Text('Answer 1'),
-            ),
-            LegacyRaisedButton(
-              onPressed: () => print('Question 2 answered!'),
-              child: Text('Answer 2'),
-            ),
-            LegacyRaisedButton(
-              onPressed: () {
-                print('Question 3 answered!');
-              },
-              child: Text('Answer 3'),
-            ),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
           ],
         ),
       ),
